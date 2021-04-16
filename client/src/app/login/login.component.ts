@@ -10,6 +10,7 @@ import { Apollo, gql } from 'apollo-angular';
 export class LoginComponent implements OnInit {
 
   constructor(public fb: FormBuilder, private router: Router, private apollo: Apollo) { }
+  hide = true;
   user: any
   username: any
   password: any
@@ -55,6 +56,9 @@ export class LoginComponent implements OnInit {
           alert("invalid username or password. please try again")
         }
       });
-
+    
+  }
+  navigate(){
+    this.router.navigateByUrl('signup')
   }
 }

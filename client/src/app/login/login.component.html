@@ -1,15 +1,27 @@
-<h1>Login</h1>
 
-<form [formGroup]="loginForm" (ngSubmit)="login()">
+<div class="container">
+  <h1>Login</h1>
+<form [formGroup]="loginForm" >
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your username</mat-label>
+    <input matInput (input)=usernameInput($event) formControlName="username">
+    <mat-error *ngIf="loginForm.hasError( 'required', 'username')">Username cannot be empty</mat-error>
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input (input)=passwordInput($event) formControlName="password"  matInput [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="loginForm.hasError( 'required', 'password')">Password cannot be empty</mat-error>
+  </mat-form-field>
   <p>
-    <label for="username">User Name</label>
-    <input type="text" (input)=usernameInput($event) formControlName="username" id="username" name="username" ngModel>
-  </p>
-  <p>
-    <label for="password">Password</label>
-    <input type="password" (input)=passwordInput($event) formControlName="password" id="password" name="password" ngModel>
-  </p>
-  <p>
-    <button type="submit" (click)="login()" [disabled]="loginForm.invalid">Login</button>
+    <button mat-raised-button color="primary" class="button1" type="submit" (click)="login()" [disabled]="loginForm.invalid">Login</button>
   </p>
 </form>
+<p>
+  <button mat-raised-button  color="warn" class="button2" (click)="navigate()" >Sign Up</button>
+</p>
+</div>

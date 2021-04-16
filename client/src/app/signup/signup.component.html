@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Sign Up</h1>
+  <form [formGroup]="signupForm" >
+    <mat-form-field appearance="fill">
+        <mat-label>Enter E-mail</mat-label>
+        <input matInput (input)=emailInput($event) formControlName="email">
+        <mat-error *ngIf="signupForm.hasError( 'required', 'email')">email cannot be empty</mat-error>
+        <mat-error *ngIf="signupForm.hasError( 'email', 'email')">Invalid Email</mat-error>
+      </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter username</mat-label>
+      <input matInput (input)=usernameInput($event) formControlName="username">
+      <mat-error *ngIf="signupForm.hasError( 'required', 'username')">Username cannot be empty</mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter Password</mat-label>
+        <input matInput (input)=passwordInput($event) formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="signupForm.hasError( 'required', 'password')">Password cannot be empty</mat-error>
+      </mat-form-field>
+    <p>
+      <button mat-raised-button color="primary" class="button1" type="submit" (click)="signup()" [disabled]="signupForm.invalid">Create account</button>
+    </p>
+    <p style="font-size: 140%;">
+       Already have an account? <a href="/login">login.</a>
+    </p>
+  </form>
+  </div>

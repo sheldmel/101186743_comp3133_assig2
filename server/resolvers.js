@@ -61,7 +61,11 @@ exports.resolvers = {
                 'password': args.password,
                 'email': args.email
             });
-            return await newUser.save();
+            let user = await newUser.save();
+            if (user){
+                return user
+            }
+            return null
         }
     }
   }

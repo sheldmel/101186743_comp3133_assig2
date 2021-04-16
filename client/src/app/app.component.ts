@@ -6,7 +6,7 @@ import { Apollo, gql } from 'apollo-angular';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'client'; 
+  title = 'Assignment 2'; 
   users: any
   constructor(private apollo: Apollo){}
 

@@ -9,6 +9,7 @@
 }
 .container mat-form-field{
     width: 40%;
+    font-size: 120%;
 }
 
 .container .button1{

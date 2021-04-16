@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
+import { Hosted } from 'protractor/built/driverProviders';
 import { LoginComponent } from '../login/login.component';
 const GET_HOTELS = gql`
   {
     listHotels{
+      hotel_id
       hotel_name
       street
       city
+      postal_code
+      price
+      email
     }
   }
 `;

@@ -1,3 +1,33 @@
-<p>
-    <button type="submit" (click)="logout()">Logout</button>
+<p style="margin-top: 2%;margin-bottom: 3%;">
+    <mat-form-field style="margin-left: 35%; width: 30%;" class="example-full-width">
+        <mat-label style="font-size: 130%;">Search</mat-label>
+        <input matInput>
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    <button style="float: right; margin-right: 2%;"  mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button>
 </p>
+<h1 style="margin: auto; width: 10%;">Hotels</h1>
+<table class="table table-striped" style="width: 80%; margin: auto; border: 10px;">
+    <thead>
+    <tr>
+      <th scope="col">Hotel Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let hotel of hotels">
+      <td>
+        {{ hotel.hotel_name }}
+      </td>
+      <td>{{ hotel.street }}, {{ hotel.city }}, {{ hotel.postal_code }}</td>
+      <td>{{ hotel.email }}</td>
+      <td>${{ hotel.price }}</td>
+      <td><button mat-raised-button color="primary" [routerLink]="['/book', hotel.hotel_id, hotel.hotel_name]">Book</button></td>
+    </tr>
+    </tbody>
+  </table>
+  
+

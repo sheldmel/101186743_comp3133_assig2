@@ -15,12 +15,6 @@
     margin-top: 3%;
     font-size: 150%;
     padding: 0.5% 5%;
-    display: inline-block
-}
-
-.container .button2{
-    margin-top: 2%;
-    font-size: 150%;
-    padding: 0.5% 4%;
-    display: inline-block
+    display: inline-block;
+    margin-bottom: 2%;
 }
