@@ -16,7 +16,14 @@ exports.resolvers = {
             return await Booking.find({});
         },
         listUsers: async (parent, args) => {
-            return await Users.find({});
+            return await User.find({});
+        },
+        loginUser: async (parent, args) => {
+            let user = await User.findOne({username: args.username});
+            if (user && user.username === args.username && user.password === args.password){
+                return user
+            }
+            return null
         }
     },
     Mutation: {

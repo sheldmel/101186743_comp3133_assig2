@@ -43,7 +43,7 @@ const HotelSchema = new mongoose.Schema({
     }
   },
   user_id:{
-    type: Number,
+    type: String,
     required:[true,"Please enter user id"],
   }
 });
