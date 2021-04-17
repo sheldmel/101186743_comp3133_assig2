@@ -12,6 +12,9 @@ exports.resolvers = {
         getHotelByCity: async (parent, args) => {
             return await Hotel.find({'city': args.city})
         },
+        getBookingsByID: async (parent, args) => {
+            return await Booking.find({'user_id': args.user_id})
+        },
         listBookings: async (parent, args) => {
             return await Booking.find({});
         },

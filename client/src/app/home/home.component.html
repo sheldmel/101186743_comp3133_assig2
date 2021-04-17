@@ -7,9 +7,11 @@
     <button style="float: right; margin-right: 2%;"  mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button>
 </p>
 <h1 style="margin: auto; width: 10%;">Hotels</h1>
+<br>
 <table class="table table-striped" style="width: 80%; margin: auto; border: 10px;">
     <thead>
     <tr>
+      <th scope="col">Hotel ID</th>
       <th scope="col">Hotel Name</th>
       <th scope="col">Address</th>
       <th scope="col">Email</th>
@@ -20,6 +22,9 @@
     <tbody>
     <tr *ngFor="let hotel of hotels">
       <td>
+        {{ hotel.hotel_id }}
+      </td>
+      <td>
         {{ hotel.hotel_name }}
       </td>
       <td>{{ hotel.street }}, {{ hotel.city }}, {{ hotel.postal_code }}</td>
@@ -29,5 +34,30 @@
     </tr>
     </tbody>
   </table>
+  <br>
+  <br>
+  <h1 style="margin: auto; width: 12%;">Bookings</h1>
+  <br>
+  <table class="table table-striped" style="width: 80%; margin: auto; border: 10px;">
+    <thead>
+    <tr>
+      <th scope="col">Hotel ID</th>
+      <th scope="col">Booking Date</th>
+      <th scope="col">Booking Start</th>
+      <th scope="col">Booking end</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let booking of bookings">
+      <td>
+        {{ booking.hotel_id }}
+      </td>
+      <td>{{ booking.booking_date}}</td>
+      <td>{{ booking.booking_start }}</td>
+      <td>{{ booking.booking_end }}</td>
+    </tr>
+    </tbody>
+  </table>
+
   
 
