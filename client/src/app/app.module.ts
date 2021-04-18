@@ -18,13 +18,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BookhotelComponent } from './bookhotel/bookhotel.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import { SearchComponent } from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
     SignupComponent,
-    BookhotelComponent
+    BookhotelComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

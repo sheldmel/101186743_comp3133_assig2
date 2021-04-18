@@ -1,8 +1,8 @@
 <p style="margin-top: 2%;margin-bottom: 3%;">
     <mat-form-field style="margin-left: 35%; width: 30%;" class="example-full-width">
-        <mat-label style="font-size: 130%;">Search</mat-label>
-        <input matInput>
-        <mat-icon matSuffix>search</mat-icon>
+        <mat-label style="font-size: 130%;">Search hotel by name or city</mat-label>
+        <input (input)=searchInput($event) matInput>
+        <mat-icon [routerLink]= "['/search', search]" matSuffix>search</mat-icon>
       </mat-form-field>
     <button style="float: right; margin-right: 2%;"  mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button>
 </p>

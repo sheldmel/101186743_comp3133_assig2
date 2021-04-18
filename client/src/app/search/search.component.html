@@ -1,0 +1,31 @@
+
+<h1 *ngIf= "hotels.length > 0" style="padding-top: 5%;margin: auto; width: 10%;">Hotels</h1>
+<br>
+<table *ngIf= "hotels.length > 0" class="table table-striped" style="width: 80%; margin: auto; border: 10px;">
+    <thead>
+    <tr>
+      <th scope="col">Hotel ID</th>
+      <th scope="col">Hotel Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let hotel of hotels">
+      <td>
+        {{ hotel.hotel_id }}
+      </td>
+      <td>
+        {{ hotel.hotel_name }}
+      </td>
+      <td>{{ hotel.street }}, {{ hotel.city }}, {{ hotel.postal_code }}</td>
+      <td>{{ hotel.email }}</td>
+      <td>${{ hotel.price }}</td>
+      <td><button mat-raised-button color="primary" [routerLink]="['/book', hotel.hotel_id, hotel.hotel_name]">Book</button></td>
+    </tr>
+    </tbody>
+</table>
+
+<h1 style="text-align: center; margin-top: 5%;" *ngIf= "hotels.length == 0">No results were found</h1>

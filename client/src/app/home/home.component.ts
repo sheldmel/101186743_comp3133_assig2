@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
   hotels: any
   query1: any
   query2: any
+  search: any
   bookings: any
   user_id = localStorage.getItem('user_id')
   constructor(private apollo: Apollo, private router: Router) { }
@@ -67,6 +68,11 @@ export class HomeComponent implements OnInit {
     this.query1.unsubscribe()
     this.query2.unsubscribe()
   }
+
+  searchInput(event){
+    this.search = event.target.value
+  }
+
   logout(){
     localStorage.setItem('IsValidUser', 'false')
     localStorage.setItem('user_id', null)
